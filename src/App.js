@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Menu from './components/MenuComponent'
 import {
   Collapse,
   Navbar,
@@ -19,13 +20,14 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Navbar dark color="primary">
-        <div class="container">
+        <div className="container">
         <NavbarBrand href="/">Confusion</NavbarBrand>
         </div>
         </Navbar>
         <h1>Kamikaze Biatch!</h1>
+        <Menu></Menu>
       </div>
     );
   }
