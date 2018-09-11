@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
-import Menu from './components/MenuComponent'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Button
-} from 'reactstrap';
+import Menu from './components/MenuComponent';
+import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
 import logo from './logo.svg';
 import './App.css';
 import { DISHES } from './shared/dishes'
@@ -27,15 +15,11 @@ class App extends Component {
     }
   render() {
     return (
-      <div>
-        <Navbar dark color="primary">
-        <div className="container">
-        <NavbarBrand href="/">Confusion</NavbarBrand>
-        </div>
-        </Navbar>
-        <h1>Kamikaze Biatch!</h1>
+      <React.Fragment>
+        <Header/>
         <Menu dishes={this.state.dishes}></Menu>
-      </div>
+        <Footer/>
+      </React.Fragment>
     );
   }
 }
