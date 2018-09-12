@@ -6,23 +6,37 @@ import Home from './components/HomeComponent';
 import Menu from './components/MenuComponent';
 import Header from './components/HeaderComponent';
 import Footer from './components/FooterComponent';
+import Contact from './components/ContactComponent';
 
 import logo from './logo.svg';
 import './App.css';
 
-import { DISHES } from './shared/dishes'
+import { DISHES } from './shared/dishes';
+import { PROMOTIONS } from './shared/promotion';
+import { LEADERS } from './shared/leaders';
+import { COMMENTS } from './shared/comments';
+
 
 class App extends Component {
     constructor(props){
         super(props);
         {
-        this.state = {dishes: DISHES,}
+        this.state = {
+          dishes: DISHES,
+          leaders: LEADERS,
+          comments: COMMENTS,
+          promotions: PROMOTIONS,
+        }
         };
     }
   render() {
     const HomePage = () => {
       return (
-        <Home />
+        <Home
+            dish={this.state.dishes.filter((dish) => dish.featured)[0]}
+            promotion={this.state.promotions.filter((promotion) => promotion.featured)[0]}
+            leader={this.state.leaders.filter((leader) => leader.featured)[0]}
+        />
       )
 
     }
@@ -33,6 +47,8 @@ class App extends Component {
         <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} /> } />
+
+            <Route exact path="/contactus" component={Contact} />
         </Switch>
         <Footer/>
       </React.Fragment>
