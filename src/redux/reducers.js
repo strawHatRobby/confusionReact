@@ -11,5 +11,5 @@ export const initalState = {
 };
 
 export const Reducer = (currentState = initalState, action ) => {
-  return state;
+  return curreState;
 };
