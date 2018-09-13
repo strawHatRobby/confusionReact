@@ -9,3 +9,7 @@ export const initalState = {
   comments: COMMENTS,
   promotions: PROMOTIONS,
 };
+
+export const Reducer = (currentState = initalState, action ) => {
+  return state;
+};
