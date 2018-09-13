@@ -14,13 +14,15 @@ import '../App.css';
 
 import { connect } from 'react-redux';
 
+import { addComment } from '../redux/actions/commentActions';
 
-const mapStateToProps = state => {
+
+const mapStateToProps = dispatch => {
       return {
-        dishes: state.dishes,
-        comments: state.comments,
-        promotions: state.promotions,
-        leaders: state.leaders,
+        dishes: dispatch.dishes,
+        addComment: (dishId, rating, author, comment ) => dispatch(addComment(dishId, rating, author, comment)),
+        promotions: dispatch.promotions,
+        leaders: dispatch.leaders,
       }
 }
 
