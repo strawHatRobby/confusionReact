@@ -71,4 +71,4 @@ class App extends Component {
   }
 }
 
-export default (connect(mapStateToProps)(App));
+export default withRouter(connect(mapStateToProps)(App));
