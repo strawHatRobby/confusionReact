@@ -1,7 +1,7 @@
-import { DISHES } from './shared/dishes';
-import { PROMOTIONS } from './shared/promotion';
-import { LEADERS } from './shared/leaders';
-import { COMMENTS } from './shared/comments';
+import { DISHES } from '../shared/dishes';
+import { PROMOTIONS } from '../shared/promotion';
+import { LEADERS } from '../shared/leaders';
+import { COMMENTS } from '../shared/comments';
 
 export const initalState = {
   dishes: DISHES,
@@ -11,5 +11,5 @@ export const initalState = {
 };
 
 export const Reducer = (currentState = initalState, action ) => {
-  return curreState;
+  return currentState;
 };

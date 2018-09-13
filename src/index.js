@@ -7,6 +7,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+import { ConfigureStore } from './redux/configureStore';
+
+const store = ConfigureStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+  </Provider>
+
+  , document.getElementById('root'));
 registerServiceWorker();
