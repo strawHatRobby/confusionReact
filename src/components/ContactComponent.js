@@ -68,7 +68,6 @@ class Contact extends Component {
                           <Col md={10}>
                               <Control.text model=",firstname" id="firstname" name="firstname"
                                 className="form-control"
-                                onChange={this.handleInputChange}
                                 placeholder="First Name"
                                 />
                                 <FormFeedback>
@@ -81,7 +80,6 @@ class Contact extends Component {
                         <Col md={10}>
                             <Control.text model=".lastname" id="lastname" name="lastname"
                               className="form-control"
-                              onChange={this.handleInputChange}
                               placeholder="Last Name"
                               />
                               <FormFeedback>
@@ -94,7 +92,6 @@ class Contact extends Component {
                         <Col md={10}>
                             <Control.email model=".email" id="email" name="email"
                               className="form-control"
-                              onChange={this.handleInputChange}
                               placeholder="email"
                               />
                               <FormFeedback>
@@ -106,8 +103,6 @@ class Contact extends Component {
                         <Col md={10}>
                             <Control.telephone model=".telnum" id="telephone" name="telnum"
                               className="form-control"
-                              onBlur={this.handleBlur('telnum')}
-                              onChange={this.handleInputChange}
                               placeholder="Telephone"
                               />
                               <FormFeedback>
@@ -120,7 +115,6 @@ class Contact extends Component {
                         <Col md={{size: 10}}>
                             <Control.textarea model=".message" id="message" name="message"
                               className="form-control"
-                              onChange={this.handleInputChange}
                               placeholder="Type you Feedback"
                               rows="10"
                               />
@@ -134,7 +128,6 @@ class Contact extends Component {
                             <Label check>
                               <Control.checkbox model=".agree" name="agree"
                               className="form-control"
-                              onChange={this.handleInputChange}
                               checked={this.state.agree} /> {' '}
                               <strong>May we contact you?</strong>
                             </Label>
@@ -145,7 +138,6 @@ class Contact extends Component {
                       <Col md={{size:3, offset: 1}}>
                         <Control.select model=".contactable?" name="contactType"
                           className="form-control"
-                           onChange={this.handleInputChange}
                          >
                               <option value="Tel.">Tel.</option>
                               <option value="Email">Email</option>
