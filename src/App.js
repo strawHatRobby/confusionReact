@@ -11,16 +11,22 @@ import Contact from './components/ContactComponent';
 import logo from './logo.svg';
 import './App.css';
 
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './redux/configureStore';
+
+const store = ConfigureStore();
 
 
 class App extends Component {
     constructor(props){
         super(props);
         {
-        
+
         };
     }
   render() {
+
+
     const HomePage = () => {
       return (
         <Home
@@ -31,7 +37,11 @@ class App extends Component {
       )
 
     }
+
+
     return (
+      <Provider store={store}>
+
       <BrowserRouter>
       <React.Fragment>
         <Header/>
@@ -44,6 +54,8 @@ class App extends Component {
         <Footer/>
       </React.Fragment>
       </BrowserRouter>
+      
+      </Provider>
     );
   }
 }
