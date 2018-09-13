@@ -11,10 +11,6 @@ import Contact from './components/ContactComponent';
 import logo from './logo.svg';
 import './App.css';
 
-import { DISHES } from './shared/dishes';
-import { PROMOTIONS } from './shared/promotion';
-import { LEADERS } from './shared/leaders';
-import { COMMENTS } from './shared/comments';
 
 
 class App extends Component {
