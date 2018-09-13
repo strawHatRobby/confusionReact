@@ -14,8 +14,19 @@ import './App.css';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 
-const store = ConfigureStore();
+import { connect } from 'react-redux';
 
+const mapStateToProps = state => {
+      return {
+        dishes: state.dishes,
+        comments: state.comments,
+        promotions: state.promotions,
+        leaders: state.leaders,
+      }
+  }
+
+
+const store = ConfigureStore();
 
 class App extends Component {
     constructor(props){
@@ -54,10 +65,10 @@ class App extends Component {
         <Footer/>
       </React.Fragment>
       </BrowserRouter>
-      
+
       </Provider>
     );
   }
 }
 
-export default App;
+export default (connect(mapStateToProps)(App));
