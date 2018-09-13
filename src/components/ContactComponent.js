@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len)
-const minLength = (len) => (val) => !(val) || (val.length >= len)
-const isANumber = (val) => !isNaN(Number(val))
-const isAValidEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.]+\.[A-Za-z]{2,4}$/i.test(val)
-
 
 export default class Contact extends Component{
   constructor(props){
@@ -72,20 +66,6 @@ export default class Contact extends Component{
                               <Control.text model=",firstname" id="firstname" name="firstname"
                                 className="form-control"
                                 placeholder="First Name"
-                                validators={{
-                                    required, minLength: minLength(3),
-                                    maxLength: maxLength(15)
-                                }}
-                                />
-                                <Errors
-                                  className="text-danger"
-                                  model=".firstname"
-                                  show="touched"
-                                  messages={{
-                                    require: "First name is required",
-                                    minLength: "Must be greater than 2 characters",
-                                    maxLength: "Must be less than 15 characters",
-                                  }}
                                 />
                           </Col>
                   </Row>
@@ -95,21 +75,7 @@ export default class Contact extends Component{
                             <Control.text model=".lastname" id="lastname" name="lastname"
                               className="form-control"
                               placeholder="Last Name"
-                              validators={{
-                                  required, minLength: minLength(3),
-                                  maxLength: maxLength(15)
-                              }}
                               />
-                              <Errors
-                                  className="text-danger"
-                                  model=".lastname"
-                                  show="touched"
-                                  messages={{
-                                    require: "Last name is required",
-                                    minLength: "Must be greater than 2 characters",
-                                    maxLength: "Must be less than 15 characters",
-                                  }}
-                                />
                         </Col>
                   </Row>
                     <Row className="form-group">
@@ -118,22 +84,7 @@ export default class Contact extends Component{
                             <Control.text model=".email" id="email" name="email"
                               className="form-control"
                               placeholder="email"
-                              validators={{
-                                  required, minLength: minLength(3),
-                                  maxLength: maxLength(15),
-                                  isAValidEmail
-                              }}
                               />
-                              <Errors
-                                  className="text-danger"
-                                  model=".email"
-                                  show="touched"
-                                  messages={{
-                                    require: "Email is required",
-                                    maxLength: "Must be less than 15 characters",
-                                    isAValidEmail: "must be of the form alphNum@alphNum.alphaNum"
-                                  }}
-                                />
                         </Col>
                   </Row>
                     <Row className="form-group">
@@ -142,23 +93,7 @@ export default class Contact extends Component{
                             <Control.text model=".telnum" id="telephone" name="telnum"
                               className="form-control"
                               placeholder="Telephone"
-                              validators={{
-                                  required, minLength: minLength(3),
-                                  maxLength: maxLength(15),
-                                  isANumber
-                              }}
                               />
-                              <Errors
-                                  className="text-danger"
-                                  model=".telnum"
-                                  show="touched"
-                                  messages={{
-                                    require: "Telephone number is Required",
-                                    minLength: "Must be greater than 2 characters",
-                                    maxLength: "Must be less than 15 characters",
-                                    isANumber: "Telephone Number must only contain numbers"
-                                  }}
-                                />
                         </Col>
                 </Row>
                   <Row className="form-group">
@@ -168,22 +103,7 @@ export default class Contact extends Component{
                               className="form-control"
                               placeholder="Type you Feedback"
                               rows="10"
-                              validators={{
-                                  required, minLength: minLength(5),
-                                  maxLength: maxLength(300),
-                              }}
                               />
-                              <Errors
-                                  className="text-danger"
-                                  model=".telnum"
-                                  show="touched"
-                                  messages={{
-                                    require: "Required",
-                                    show:"touched",
-                                    minLength: "Must be greater than 5 characters",
-                                    maxLength: "You have reached the maximum number of characters",
-                                  }}
-                                />
                         </Col>
                   </Row>
                     <Row className="form-group">
