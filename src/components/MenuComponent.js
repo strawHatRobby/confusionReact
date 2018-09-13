@@ -3,6 +3,13 @@ import { Media  } from 'reactstrap';
 import { Card, CardBody, CardImg, CardImgOverlay, CardTitle,  CardText,
    Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+      return {
+        dishes: state.dishes;
+      }
+}
 
 class Menu extends Component {
   constructor(props){
