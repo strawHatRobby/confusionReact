@@ -69,7 +69,7 @@ export default class Contact extends Component{
                     <Row className="form-group">
                         <Label htmlFor="firstname" md={2} >First Name</Label>
                           <Col md={10}>
-                              <Control.text model=",firstname" id="firstname" name="firstname"
+                              <Control.text model=".firstname" id="firstname" name="firstname"
                                 className="form-control"
                                 placeholder="First Name"
                                 validators={{
